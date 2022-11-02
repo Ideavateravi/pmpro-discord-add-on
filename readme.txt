@@ -88,3 +88,4 @@ Please make sure your bot role has the highest priority among all other roles in
 2. Map Discord roles and PMPRO levels.
 3. Advanced settings.
 4. Spot the Connect to Discord on your profile page.
+5. The appearance and text of the connect / disconnect button.
