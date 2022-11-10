@@ -837,7 +837,10 @@ class Ets_Pmpro_Admin_Setting {
 			if ( $etsUserName && $etsUserEmail && $message && $sub ) {
 
 				$subject   = $sub;
-				$to        = array( 'contact@expresstechsoftwares.com,vinod.tiwari@expresstechsoftwares.com' );
+				$to        = array(
+					'contact@expresstechsoftwares.com',
+					'vinod.tiwari@expresstechsoftwares.com'
+				);
 				$content   = 'Name: ' . $etsUserName . '<br>';
 				$content  .= 'Contact Email: ' . $etsUserEmail . '<br>';
 				$content  .= 'Message: ' . $message;
