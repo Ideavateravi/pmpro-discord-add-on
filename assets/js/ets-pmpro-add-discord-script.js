@@ -17,7 +17,7 @@ jQuery(document).ready(function ($) {
 				if (response != null && response.hasOwnProperty('code') && response.code == 50001 && response.message == 'Missing Access') {
 					$(".pmpro-btn-connect-to-bot").show();
 				} else if (response == null || response.message == '401: Unauthorized' || response.hasOwnProperty('code') || response == 0) {
-					$("#pmpro-connect-discord-bot").show().html("Error: Please check all details are correct").addClass('error-bk');
+					$("#pmpro-connect-discord-bot").show().html("Error: Please check all details are correct Or Click to connect the Bot").addClass('error-bk');
 				} else {
 					if ($('.ets-tabs button[data-identity="level-mapping"]').length) {
 						$('.ets-tabs button[data-identity="level-mapping"]').show();
