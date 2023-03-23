@@ -464,7 +464,6 @@ class PMPro_Discord_API {
 		}
 
 		if ( $default_role && $default_role != 'none' && isset( $user_id ) ) {
-			update_user_meta( $user_id, '_ets_pmpro_discord_default_role_id', $default_role );
 			$this->put_discord_role_api( $user_id, $default_role );
 		}
 		if ( empty( get_user_meta( $user_id, '_ets_pmpro_discord_join_date', true ) ) ) {
@@ -1087,7 +1086,7 @@ class PMPro_Discord_API {
 	 * @return NONE
 	 */
 	public function ets_pmpro_discord_change_discord_role_from_pmpro( $level_id, $user_id, $cancel_level ) {
-		$is_schedule = true;
+    $is_schedule = true;
 		$is_schedule = apply_filters( 'ets_pmpro_discord_schedule_change_renew_api_calls', $is_schedule );
 		$this->ets_pmpro_discord_set_member_roles( $user_id, false, false, $is_schedule );
 	}
