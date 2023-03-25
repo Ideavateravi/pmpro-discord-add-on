@@ -642,6 +642,8 @@ class Ets_Pmpro_Admin_Setting {
 
 		$ets_pmpro_discord_embed_messaging_feature = isset( $_POST['ets_pmpro_discord_embed_messaging_feature'] ) ? sanitize_textarea_field( trim( $_POST['ets_pmpro_discord_embed_messaging_feature'] ) ) : '';
 
+		$ets_pmpro_discord_data_erases = isset( $_POST['ets_pmpro_discord_data_erases'] ) ? sanitize_textarea_field( trim( $_POST['ets_pmpro_discord_data_erases'] ) ) : '';
+
 		if ( isset( $_POST['adv_submit'] ) ) {
 			if ( isset( $_POST['ets_discord_save_adv_settings'] ) && wp_verify_nonce( $_POST['ets_discord_save_adv_settings'], 'save_discord_adv_settings' ) ) {
 				if ( isset( $_POST['upon_failed_payment'] ) ) {
@@ -760,6 +762,13 @@ class Ets_Pmpro_Admin_Setting {
 				} else {
 					update_option( 'ets_pmpro_discord_embed_messaging_feature', false );
 				}
+
+				if ( isset( $_POST['ets_pmpro_discord_data_erases'] ) ) {
+					update_option( 'ets_pmpro_discord_data_erases', true );
+				} else {
+					update_option( 'ets_pmpro_discord_data_erases', false );
+				}				
+
 				$message      = 'Your settings are saved successfully.';
 				$pre_location = $_POST['referrer'] . '&save_settings_msg=' . $message . '#ets_pmpro_advance_settings';
 				wp_safe_redirect( $pre_location );

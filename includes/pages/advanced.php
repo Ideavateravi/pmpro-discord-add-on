@@ -18,6 +18,7 @@ $ets_pmpro_discord_welcome_message            = sanitize_text_field( trim( get_o
 $ets_pmpro_discord_send_membership_cancel_dm  = sanitize_text_field( trim( get_option( 'ets_pmpro_discord_send_membership_cancel_dm' ) ) );
 $ets_pmpro_discord_cancel_message             = sanitize_text_field( trim( get_option( 'ets_pmpro_discord_cancel_message' ) ) );
 $ets_pmpro_discord_embed_messaging_feature    = sanitize_text_field( trim( get_option( 'ets_pmpro_discord_embed_messaging_feature' ) ) );
+$ets_pmpro_discord_data_erases    = sanitize_text_field( trim( get_option( 'ets_pmpro_discord_data_erases' ) ) );
 $current_screen = ets_pmpro_discord_get_current_screen_url();
 ?>
 <form method="post" action="<?php echo get_site_url().'/wp-admin/admin-post.php' ?>">
@@ -46,7 +47,20 @@ $current_screen = ets_pmpro_discord_get_current_screen_url();
                 <br/>
                 <small>Use [LINEBREAK] to split lines.</small>                
 		</fieldset></td>
-	  </tr>          
+	  </tr>  
+	  <tr>
+		<th scope="row"><?php echo __( 'Data erases on uninstall?', 'pmpro-discord-add-on' ); ?></th>
+		<td> <fieldset>
+		<input name="ets_pmpro_discord_data_erases" type="checkbox" id="ets_pmpro_discord_data_erases" 
+		<?php
+		if ( $ets_pmpro_discord_data_erases == true ) {
+			echo 'checked="checked"'; }
+		?>
+		 value="1">
+                <br/>
+                <small>By checking this box, you are indicating that you want to delete all data associated with the plugin when it is uninstalled.</small>                
+		</fieldset></td>
+	  </tr>	          
   <tr>
 		<th scope="row"><?php echo __( 'Send welcome message', 'pmpro-discord-add-on' ); ?></th>
 		<td> <fieldset>
