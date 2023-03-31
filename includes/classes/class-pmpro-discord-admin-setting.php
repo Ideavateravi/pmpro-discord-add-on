@@ -53,6 +53,9 @@ class Ets_Pmpro_Admin_Setting {
 		add_filter( 'pmpro_change_level', array( $this, 'ets_pmpro_discord_handle_cancel_on_next_payment' ), 99, 4 );
 
 		add_filter( 'ets_pmpro_show_connect_button_on_profile', array( $this, 'ets_pmpro_discord_show_connect_button_on_profile' ), 10, 1 );
+
+		add_filter( 'manage_users_columns', array( $this, 'ets_pmpro_discord_add_discord_connected_account' ) );
+		add_filter( 'manage_users_custom_column', array( $this, 'ets_pmpro_discord_discord_connected_account' ), 99, 3 );
 	}
 	/**
 	 * set action scheuduler concurrent batches number
@@ -767,7 +770,7 @@ class Ets_Pmpro_Admin_Setting {
 					update_option( 'ets_pmpro_discord_data_erases', true );
 				} else {
 					update_option( 'ets_pmpro_discord_data_erases', false );
-				}				
+				}
 
 				$message      = 'Your settings are saved successfully.';
 				$pre_location = $_POST['referrer'] . '&save_settings_msg=' . $message . '#ets_pmpro_advance_settings';
@@ -848,7 +851,7 @@ class Ets_Pmpro_Admin_Setting {
 				$subject   = $sub;
 				$to        = array(
 					'contact@expresstechsoftwares.com',
-					'vinod.tiwari@expresstechsoftwares.com'
+					'vinod.tiwari@expresstechsoftwares.com',
 				);
 				$content   = 'Name: ' . $etsUserName . '<br>';
 				$content  .= 'Contact Email: ' . $etsUserEmail . '<br>';
@@ -933,5 +936,42 @@ class Ets_Pmpro_Admin_Setting {
 
 		return $show;
 	}
+
+	/**
+	 * Add  Discord connected column to WP Users listing.
+	 *
+	 * @param ARRAY $columns
+	 * @return VOID
+	 */
+	public function ets_pmpro_discord_add_discord_connected_account( $columns ) {
+		$columns['ets_pmpro_discord_account'] = esc_html__( 'Discord Connected Account', 'pmpro-discord-add-on' );
+		return $columns;
+
+	}
+
+	/**
+	 *  Display discord-connected account details and link for the account inside discord.
+	 *
+	 * @param STRING $value
+	 * @param STRING $column_name
+	 * @param INT $user_id
+	 * @return void
+	 */
+	public function ets_pmpro_discord_discord_connected_account( $value, $column_name, $user_id ) {
+		if ( $column_name === 'ets_pmpro_discord_account' ) {
+			$access_token = sanitize_text_field( trim( get_user_meta( $user_id, '_ets_pmpro_discord_access_token', true ) ) );
+			if ( $access_token ) {
+				$discord_user_id  = sanitize_text_field( trim( get_user_meta( $user_id, '_ets_pmpro_discord_user_id', true ) ) );
+				$discord_username = sanitize_text_field( trim( get_user_meta( $user_id, '_ets_pmpro_discord_username', true ) ) );
+				return '<a target="_blank" href="https://discord.com/channels/@me/' . $discord_user_id . '"  class="" >' . esc_html__( 'Discord: ' . $discord_username ) . '</a>';
+			} else {
+				return esc_html__( 'Not Connected', 'pmpro-discord-add-on' );
+			}
+		}
+
+		return $value;
+
+	}
+
 }
 new Ets_Pmpro_Admin_Setting();
