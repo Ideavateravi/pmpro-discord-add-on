@@ -95,8 +95,8 @@
   color: #ffffff;
 }
 .ets-btn.error-bk {
-  pointer-events: none;
-  cursor: default;
+  /* pointer-events: none; */
+  cursor: cursor;
   text-decoration: none;
   background-color:#FF0000;
 }

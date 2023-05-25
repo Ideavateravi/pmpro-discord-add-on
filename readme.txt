@@ -1,13 +1,13 @@
 === Connect Paid Memberships Pro to Discord ===
-Contributors: expresstechsoftware, strangerstudios, 
+Contributors: expresstechsoftware, webbdeveloper, sunnysoni, strangerstudios 
 Tags: Discord, Talk, Video Chat, Hang Out, Friends, Memberships, discord role management
 Donate link: https://paypal.me/supportets
 Author URI: https://www.expresstechsoftwares.com
 Author: ExpressTech Software Solutions Pvt. Ltd.
 Requires at least: 4.7
-Tested up to: 6.0.2
+Tested up to: 6.2
 Requires PHP: 7.0
-Stable tag: 1.2.4
+Stable tag: 1.2.8
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,7 +62,16 @@ Go to Memberships > Discord Settings in the WordPress admin to begin setup. Our 
 
 == Checkout Our Other Plugins ==
 1. [Connect MemberPress and Discord](https://wordpress.org/plugins/expresstechsoftwares-memberpress-discord-add-on/)
-2. [Connect LearnDash and Discord](https://wordpress.org/plugins/connect-learndash-and-discord/)
+2. [connect Learnpress and Discord](https://wordpress.org/plugins/connect-learnpress-discord-add-on/)
+3. [Connect LearnDash and Discord](https://wordpress.org/plugins/connect-learndash-and-discord/)
+4. [Connect GamiPress and Discord](https://wordpress.org/plugins/connect-gamipress-and-discord/)
+5. [Connect LifterLMS and Discord](https://wordpress.org/plugins/connect-lifterlms-to-discord/)
+6. [Webhook For WCFM Vendors](https://wordpress.org/plugins/webhook-for-wcfm-vendors/)
+7. [Inspect HTTP Requests](https://wordpress.org/plugins/inspect-http-requests/)
+8. [Product Questions & Answers for WooCommerce](https://wordpress.org/plugins/product-questions-answers-for-woocommerce/)
+9. [Connect Ultimate Member and Discord](https://wordpress.org/plugins/ultimate-member-discord-add-on/)
+10. [Connect Eduma Theme and Discord](https://wordpress.org/plugins/connect-eduma-theme-to-discord/)
+11. [Connect BadgeOS and Discord](https://wordpress.org/plugins/connect-badgeos-to-discord/)
 
 
 == Frequently Asked Questions ==
@@ -88,3 +97,4 @@ Please make sure your bot role has the highest priority among all other roles in
 2. Map Discord roles and PMPRO levels.
 3. Advanced settings.
 4. Spot the Connect to Discord on your profile page.
+5. The appearance and text of the connect / disconnect button.
