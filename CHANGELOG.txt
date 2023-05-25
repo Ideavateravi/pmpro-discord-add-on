@@ -1,3 +1,9 @@
+= 1.2.8 =
+- Add Opt-out
+- Fixed #GH 310
+- Fixed #GH 315
+- Fixed #GH 316
+
 = 1.2.7 =
 - Add link to support forum
 
