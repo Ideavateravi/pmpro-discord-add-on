@@ -240,7 +240,7 @@ class Ets_Pmpro_Admin_Setting {
 			$btn_text                       = sanitize_text_field( trim( get_option( 'ets_pmpro_discord_loggedout_btn_text' ) ) );
 			echo '<style>.pmpro-btn-connect{background-color: ' . $btn_color . ';}</style>';
 			if ( $member_discord_login ) {
-				$curr_level_id     = $_GET['level'];
+				$curr_level_id     = $_GET['level'] ?? '';
 				$mapped_role_name  = '';
 				$default_role_name = '';
 				if ( $default_role != 'none' && is_array( $all_roles ) && array_key_exists( $default_role, $all_roles ) ) {
