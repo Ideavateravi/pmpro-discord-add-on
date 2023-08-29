@@ -1,5 +1,8 @@
+= 1.2.10 =
+- Update WordPress version 6.3
 = 1.2.9 =
 - Fixed #GH 319
+
 = 1.2.8 =
 - Add Opt-out
 - Fixed #GH 310
