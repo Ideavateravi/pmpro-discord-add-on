@@ -53,6 +53,7 @@ class Ets_Pmpro_Add_Discord {
 		require_once ETS_PMPRO_DISCORD_PATH . 'includes/classes/class-pmpro-discord-admin-setting.php';
 		require_once ETS_PMPRO_DISCORD_PATH . 'includes/classes/class-discord-api.php';
 		require_once ETS_PMPRO_DISCORD_PATH . 'includes/classes/class-discord-addon-logs.php';
+		require_once ETS_PMPRO_DISCORD_PATH . 'includes/classes/class-discord-addon-admin-notices.php';
 
 		// initiate cron event
 		register_activation_hook( __FILE__, array( $this, 'ets_pmpro_discord_set_up_plugin' ) );
