@@ -1,5 +1,9 @@
+= 1.2.11 =
+- Add dismissible notification asking for review
+
 = 1.2.10 =
 - Update WordPress version 6.3
+
 = 1.2.9 =
 - Fixed #GH 319
 
