@@ -68,6 +68,8 @@ class Ets_Pmpro_Admin_Notices {
 				'src'   => array(),
 				'class' => array(),
 			),
+			'h1'  => array(),
+			'b'   => array(),
 		);
 
 		return $allowed_html;
