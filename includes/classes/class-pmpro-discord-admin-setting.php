@@ -56,6 +56,8 @@ class Ets_Pmpro_Admin_Setting {
 
 		add_filter( 'manage_users_columns', array( $this, 'ets_pmpro_discord_add_discord_connected_account' ) );
 		add_filter( 'manage_users_custom_column', array( $this, 'ets_pmpro_discord_discord_connected_account' ), 99, 3 );
+
+		add_action( 'wp_ajax_ets_pmpro_discord_notice_dismiss', array( $this, 'ets_pmpro_discord_notice_dismiss' ) );
 	}
 	/**
 	 * set action scheuduler concurrent batches number
@@ -240,7 +242,7 @@ class Ets_Pmpro_Admin_Setting {
 			$btn_text                       = sanitize_text_field( trim( get_option( 'ets_pmpro_discord_loggedout_btn_text' ) ) );
 			echo '<style>.pmpro-btn-connect{background-color: ' . $btn_color . ';}</style>';
 			if ( $member_discord_login ) {
-				$curr_level_id     = $_GET['level'];
+				$curr_level_id     = $_GET['level'] ?? '';
 				$mapped_role_name  = '';
 				$default_role_name = '';
 				if ( $default_role != 'none' && is_array( $all_roles ) && array_key_exists( $default_role, $all_roles ) ) {
@@ -954,7 +956,7 @@ class Ets_Pmpro_Admin_Setting {
 	 *
 	 * @param STRING $value
 	 * @param STRING $column_name
-	 * @param INT $user_id
+	 * @param INT    $user_id
 	 * @return void
 	 */
 	public function ets_pmpro_discord_discord_connected_account( $value, $column_name, $user_id ) {
@@ -971,6 +973,28 @@ class Ets_Pmpro_Admin_Setting {
 
 		return $value;
 
+	}
+
+	public function ets_pmpro_discord_notice_dismiss(){
+		if ( ! is_user_logged_in() ) {
+			wp_send_json_error( 'Unauthorized user', 401 );
+			exit();
+		}
+
+		// Check for nonce security
+		if ( ! wp_verify_nonce( $_POST['ets_discord_nonce'], 'ets-discord-ajax-nonce' ) ) {
+				wp_send_json_error( 'You do not have sufficient rights', 403 );
+				exit();
+		}
+
+		update_user_meta( get_current_user_id(), '_ets_pmpro_discord_dismissed_notification', true );
+		$event_res = array(
+			'status'  => 1,
+			'message' => __( 'success', 'pmpro-discord-add-on' ),
+		);
+		return wp_send_json( $event_res );
+
+		exit();
 	}
 
 }

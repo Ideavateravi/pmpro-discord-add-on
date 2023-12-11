@@ -307,6 +307,27 @@ jQuery(document).ready(function ($) {
         $('#ets_pmpro_btn_color').wpColorPicker();
         $('#ets_pmpro_btn_disconnect_color').wpColorPicker();
     }
+
+	$(' .ets-pmpro-discord-review-notice > button.notice-dismiss' ).on('click', function() {
+		$.ajax({
+			type: "POST",
+			dataType: "JSON",
+			url: etsPmproParams.admin_ajax,
+			data: { 'action': 'ets_pmpro_discord_notice_dismiss', 'ets_discord_nonce': etsPmproParams.ets_discord_nonce, },
+			beforeSend: function () {
+				// console.log('sending...');
+			},
+			success: function (response) {
+				console.log(response);
+			},
+			error: function (response) {
+				console.error(response);
+			},
+			complete: function () {
+				// 
+			}
+		});
+	});
 });
 if (etsPmproParams.is_admin) {
 	/*Tab options*/

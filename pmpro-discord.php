@@ -3,7 +3,7 @@
  * Plugin Name: Connect Paid Memberships Pro to Discord
  * Plugin URI:  https://www.expresstechsoftwares.com/step-by-step-documentation-guide-on-how-to-connect-pmpro-and-discord-server-using-discord-addon
  * Description: Connect your PaidMebershipPro site to your discord server, enable your members to be part of your community.
- * Version: 1.2.8
+ * Version: 1.2.12
  * Author: ExpressTech Software Solutions Pvt. Ltd., Strangers Studios
  * Author URI: https://www.expresstechsoftwares.com
  * Text Domain: pmpro-discord-add-on
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // create plugin version constant.
-define( 'ETS_PMPRO_VERSION', '1.2.8' );
+define( 'ETS_PMPRO_VERSION', '1.2.12' );
 
 // create plugin url constant.
 define( 'ETS_PMPRO_DISCORD_URL', plugin_dir_url( __FILE__ ) );
@@ -53,6 +53,7 @@ class Ets_Pmpro_Add_Discord {
 		require_once ETS_PMPRO_DISCORD_PATH . 'includes/classes/class-pmpro-discord-admin-setting.php';
 		require_once ETS_PMPRO_DISCORD_PATH . 'includes/classes/class-discord-api.php';
 		require_once ETS_PMPRO_DISCORD_PATH . 'includes/classes/class-discord-addon-logs.php';
+		require_once ETS_PMPRO_DISCORD_PATH . 'includes/classes/class-discord-addon-admin-notices.php';
 
 		// initiate cron event
 		register_activation_hook( __FILE__, array( $this, 'ets_pmpro_discord_set_up_plugin' ) );

@@ -493,3 +493,36 @@ select#defaultRole{
     border-radius: 20%;
     margin-right: 6px;     
 }
+
+/* Notification review */
+div.ets-pmpro-discord-review-notice{
+  background-color: #FFF;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 !important;
+  position: relative;
+}
+
+div.ets-pmpro-discord-review-notice div.ets-pmpro-discord-notice-icon{
+  background-image: url(../../assets/images/icon.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: 150px;
+}
+div.ets-pmpro-discord-review-notice div.ets-pmpro-discord-notice-content{
+  padding: 20px;
+}
+div.ets-pmpro-discord-review-notice div.ets-pmpro-discord-notice-content p.ets-pmpro-signature {
+  display: flex; 
+  align-items: center;
+}
+div.ets-pmpro-discord-review-notice div.ets-pmpro-discord-notice-content img{
+  width: 45px;
+  height: auto;
+  border-radius: 50%;
+  margin-left: 15px;
+}
