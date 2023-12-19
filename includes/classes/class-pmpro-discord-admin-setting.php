@@ -682,6 +682,12 @@ class Ets_Pmpro_Admin_Setting {
 					update_option( 'ets_pmpro_discord_force_login_with_discord', false );
 				}
 
+				if ( isset( $_POST['member_discord_redirect_to_discord_server'] ) ) {
+					update_option( 'ets_pmpro_discord_redirect_to_discord_server', true );
+				} else {
+					update_option( 'ets_pmpro_discord_redirect_to_discord_server', false );
+				}
+
 				if ( isset( $_POST['member_discord_login'] ) ) {
 					update_option( 'ets_pmpro_discord_login_with_discord', true );
 				} elseif ( isset( $_POST['member_force_discord_login'] ) ) {
@@ -975,7 +981,7 @@ class Ets_Pmpro_Admin_Setting {
 
 	}
 
-	public function ets_pmpro_discord_notice_dismiss(){
+	public function ets_pmpro_discord_notice_dismiss() {
 		if ( ! is_user_logged_in() ) {
 			wp_send_json_error( 'Unauthorized user', 401 );
 			exit();

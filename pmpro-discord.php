@@ -114,6 +114,7 @@ class Ets_Pmpro_Add_Discord {
 		update_option( 'ets_pmpro_discord_cancel_message', 'Hi [MEMBER_USERNAME], ([MEMBER_EMAIL]), Your membership [MEMBERSHIP_LEVEL] at [BLOG_NAME] is cancelled, Regards, [SITE_URL]' );
 		update_option( 'ets_pmpro_discord_embed_messaging_feature', false );
 		update_option( 'ets_pmpro_discord_data_erases', false );
+		update_option( 'ets_pmpro_discord_redirect_to_discord_server', false );
 	}
 
 }
