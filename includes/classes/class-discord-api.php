@@ -605,7 +605,7 @@ class PMPro_Discord_API {
 							$redirect_to_discord_server = sanitize_text_field( trim( get_option( 'ets_pmpro_discord_redirect_to_discord_server', false ) ) );
 							$discord_server_id          = sanitize_text_field( trim( get_option( 'ets_pmpro_discord_guild_id' ) ) );
 							if ( $redirect_to_discord_server ) {
-								error_log (' Reditect to server ' . 'https://discord.com/channels/' . $discord_server_id . '/');
+								
 								wp_redirect( 'https://discord.com/channels/' . $discord_server_id . '/', 302, get_site_url() );
 								exit;
 							}
