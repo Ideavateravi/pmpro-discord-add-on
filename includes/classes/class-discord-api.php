@@ -601,6 +601,14 @@ class PMPro_Discord_API {
 							// Method `catch_discord_auth_callback` set the usermeta key _ets_pmpro_discord_user_id, accessed in below line
 							$discord_user_id = sanitize_text_field( trim( get_user_meta( $user_id, '_ets_pmpro_discord_user_id', true ) ) );
 							$this->add_discord_member_in_guild( $discord_user_id, $user_id, $access_token );
+
+							$redirect_to_discord_server = sanitize_text_field( trim( get_option( 'ets_pmpro_discord_redirect_to_discord_server', false ) ) );
+							$discord_server_id          = sanitize_text_field( trim( get_option( 'ets_pmpro_discord_guild_id' ) ) );
+							if ( $redirect_to_discord_server ) {
+								error_log (' Reditect to server ' . 'https://discord.com/channels/' . $discord_server_id . '/');
+								wp_redirect( 'https://discord.com/channels/' . $discord_server_id . '/', 302, get_site_url() );
+								exit;
+							}
 						}
 					}
 				}
@@ -1086,7 +1094,7 @@ class PMPro_Discord_API {
 	 * @return NONE
 	 */
 	public function ets_pmpro_discord_change_discord_role_from_pmpro( $level_id, $user_id, $cancel_level ) {
-    $is_schedule = true;
+		$is_schedule = true;
 		$is_schedule = apply_filters( 'ets_pmpro_discord_schedule_change_renew_api_calls', $is_schedule );
 		$this->ets_pmpro_discord_set_member_roles( $user_id, false, false, $is_schedule );
 	}
