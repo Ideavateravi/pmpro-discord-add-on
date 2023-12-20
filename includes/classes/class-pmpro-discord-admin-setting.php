@@ -684,6 +684,9 @@ class Ets_Pmpro_Admin_Setting {
 
 				if ( isset( $_POST['member_discord_redirect_to_discord_server'] ) ) {
 					update_option( 'ets_pmpro_discord_redirect_to_discord_server', true );
+					$discord_bot_token          = sanitize_text_field( trim( get_option( 'ets_pmpro_discord_bot_token' ) ) );
+					$discord_server_id          = sanitize_text_field( trim( get_option( 'ets_pmpro_discord_guild_id' ) ) );
+					Ets_Pmpro_Utils::get_general_channel_id( $discord_server_id, $discord_bot_token );
 				} else {
 					update_option( 'ets_pmpro_discord_redirect_to_discord_server', false );
 				}

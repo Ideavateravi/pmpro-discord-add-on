@@ -50,6 +50,7 @@ class Ets_Pmpro_Add_Discord {
 		// Add internal classes
 		require_once ETS_PMPRO_DISCORD_PATH . 'libraries/action-scheduler/action-scheduler.php';
 		require_once ETS_PMPRO_DISCORD_PATH . 'includes/functions.php';
+		require_once ETS_PMPRO_DISCORD_PATH . 'includes/classes/class-discord-addon-utils.php';
 		require_once ETS_PMPRO_DISCORD_PATH . 'includes/classes/class-pmpro-discord-admin-setting.php';
 		require_once ETS_PMPRO_DISCORD_PATH . 'includes/classes/class-discord-api.php';
 		require_once ETS_PMPRO_DISCORD_PATH . 'includes/classes/class-discord-addon-logs.php';
