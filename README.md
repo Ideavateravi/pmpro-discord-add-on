@@ -53,6 +53,14 @@ This add-on enables connecting your PMPRO enabled website to your discord server
 - Send a Direct message to discord members when their membership is cancelled. (Only work when allow none member is set to YES and Direct Message advanced setting is set ENABLED)
 - Send membership expiration warnings Direct Message when membership is about to expire (Default 7 days before)
 - Short code [discord_connect_button] can be used on any page to display connect/disconnect button.
+- Using the shortcode [discord_connect_button] on any page, anyone can join the website discord server by authentication via member discord account. New members will get `default` role if selected in the setting.
+- Button styling feature under the plugin settings.
+- Support of Paid Memberships Pro - Cancel on Next Payment Date. So the member role wont get removed immediately upon cancel.
+- Support for forced discord authentication before checkout.
+
+- Hide the connect button using the simple filter: ets_pmpro_show_connect_button_on_profile
+`add_filter('ets_pmpro_show_connect_button_on_profile', '__return_false' );`
+Adding above code line in functions.php of theme or using code snippet plugin.
 
 ## Solution of Missing Access Error
 - Inside the log tab you will see "50001:Missing Access", which is happening because the new BOT role need to the TOP priroty among the other roles.

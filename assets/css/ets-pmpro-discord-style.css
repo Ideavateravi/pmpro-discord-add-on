@@ -95,8 +95,8 @@
   color: #ffffff;
 }
 .ets-btn.error-bk {
-  pointer-events: none;
-  cursor: default;
+  /* pointer-events: none; */
+  cursor: cursor;
   text-decoration: none;
   background-color:#FF0000;
 }
@@ -105,20 +105,20 @@
   overflow: scroll;
 }
 .pmpro-btn-connect{
-  background-color: #77A02E;
+  /*background-color: #77A02E;*/
 }
 .pmpro-btn-connect-to-bot{
   background-color: #FF0000;
 }
 .pmpro-btn-disconnect{
-  background-color:#FF0000;
+  /*background-color:#FF0000;*/
 }
 .pmpro-clrbtndiv{
-    max-width: 230px;
     display: flex;
 }
 .pmpro-clrbtndiv .form-group{
   display: flex;
+  align-items: center;
 }
 .pmpro-clrbtndiv .form-group .spinner{
   margin: 10px 10px 0;
@@ -321,6 +321,7 @@ a{
  }
  .ets_assigned_role{
   font-size: 10px;
+  margin-top: 5px;
  }
  .ets-danger-text{
   color: #FF0000 !important;
@@ -475,3 +476,53 @@ select#defaultRole{
   color: #2ca450;
 }
 .ets_pmpro_discord_dm_textarea{height:130px;}
+.ets_assigned_role > span{
+    padding: 0px 7px;
+    border-radius: 12px;
+    color: #fff;
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center; 
+    background-color: #28303d;
+    margin-right: 5px;
+}
+.ets_assigned_role > span > i{
+    width: 100%;
+    height: 14px;
+    display: inline-block;
+    border-radius: 20%;
+    margin-right: 6px;     
+}
+
+/* Notification review */
+div.ets-pmpro-discord-review-notice{
+  background-color: #FFF;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 !important;
+  position: relative;
+}
+
+div.ets-pmpro-discord-review-notice div.ets-pmpro-discord-notice-icon{
+  background-image: url(../../assets/images/icon.png);
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: 150px;
+}
+div.ets-pmpro-discord-review-notice div.ets-pmpro-discord-notice-content{
+  padding: 20px;
+}
+div.ets-pmpro-discord-review-notice div.ets-pmpro-discord-notice-content p.ets-pmpro-signature {
+  display: flex; 
+  align-items: center;
+}
+div.ets-pmpro-discord-review-notice div.ets-pmpro-discord-notice-content img{
+  width: 45px;
+  height: auto;
+  border-radius: 50%;
+  margin-left: 15px;
+}

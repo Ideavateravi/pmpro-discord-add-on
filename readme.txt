@@ -1,10 +1,13 @@
 === Connect Paid Memberships Pro to Discord ===
-Contributors: expresstechsoftware, strangerstudios
-Tags: Discord, Talk, Video Chat, Hang Out, Friends, Meberships, discord role management
+Contributors: expresstechsoftware, webbdeveloper, sunnysoni, strangerstudios 
+Tags: Discord, Talk, Video Chat, Hang Out, Friends, Memberships, discord role management
+Donate link: https://paypal.me/supportets
+Author URI: https://www.expresstechsoftwares.com
+Author: ExpressTech Software Solutions Pvt. Ltd.
 Requires at least: 4.7
-Tested up to: 5.8
+Tested up to: 6.3
 Requires PHP: 7.0
-Stable tag: 1.0.4
+Stable tag: 1.2.12
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,8 +18,7 @@ This add-on enables connecting your PMPRO enabled website to your discord server
 
 Very simple setup and intutive User interface to Manage Member Role inside Discord.
 - Please always contact support if you are facing issues in setup or see any bug.
-- The plugin took us 9 months to develop, if you like our work so please support us in keep developing awesome free plugins.
-- - Our Paypal email is business@expresstechsoftwares.com
+- If you did like the plugin, kindly support us in doing free excellent work our PayPal email is: business@expresstechsoftwares.com
 
 [youtube https://youtu.be/v7lxB_Bvlv4]
 
@@ -34,7 +36,13 @@ This plugin provides the following features:
 11) Send a Direct message to discord members when their membership is cancelled. (Only work when allow none member is set to YES and Direct Message advanced setting is set ENABLED)
 12) Send membership expiration warnings Direct Message when membership is about to expire (Default 7 days before)
 13) Short code [discord_connect_button] can be used on any page to display connect/disconnect button.
-
+14) Using the shortcode [discord_connect_button] on any page, anyone can join the website discord server by authentication via member discord account. New members will get `default` role if selected in the setting.
+15) Button styling feature under the plugin settings.
+16) Support of Paid Memberships Pro - Cancel on Next Payment Date. So the member role wont get removed immediately upon cancel.
+17) Support for forced discord authentication before checkout.
+18) Hide the connect button using the simple filter: ets_pmpro_show_connect_button_on_profile
+`add_filter('ets_pmpro_show_connect_button_on_profile', '__return_false' );`
+Adding above code line in functions.php of theme or using code snippet plugin.
 
 [View all Screenshots](https://www.expresstechsoftwares.com/pmpro-official-discord-add-on/)
 
@@ -51,6 +59,19 @@ Go to Memberships > Discord Settings in the WordPress admin to begin setup. Our 
 = More Installation and Setup Documentation =
 * [Installation Video](https://youtu.be/v7lxB_Bvlv4)
 * [Installation Docs](https://www.expresstechsoftwares.com/step-by-step-documentation-guide-on-how-to-connect-pmpro-and-discord-server-using-discord-addon/)
+
+== Checkout Our Other Plugins ==
+1. [Connect MemberPress and Discord](https://wordpress.org/plugins/expresstechsoftwares-memberpress-discord-add-on/)
+2. [connect Learnpress and Discord](https://wordpress.org/plugins/connect-learnpress-discord-add-on/)
+3. [Connect LearnDash and Discord](https://wordpress.org/plugins/connect-learndash-and-discord/)
+4. [Connect GamiPress and Discord](https://wordpress.org/plugins/connect-gamipress-and-discord/)
+5. [Connect LifterLMS and Discord](https://wordpress.org/plugins/connect-lifterlms-to-discord/)
+6. [Webhook For WCFM Vendors](https://wordpress.org/plugins/webhook-for-wcfm-vendors/)
+7. [Inspect HTTP Requests](https://wordpress.org/plugins/inspect-http-requests/)
+8. [Product Questions & Answers for WooCommerce](https://wordpress.org/plugins/product-questions-answers-for-woocommerce/)
+9. [Connect Ultimate Member and Discord](https://wordpress.org/plugins/ultimate-member-discord-add-on/)
+10. [Connect Eduma Theme and Discord](https://wordpress.org/plugins/connect-eduma-theme-to-discord/)
+11. [Connect BadgeOS and Discord](https://wordpress.org/plugins/connect-badgeos-to-discord/)
 
 
 == Frequently Asked Questions ==
@@ -76,3 +97,4 @@ Please make sure your bot role has the highest priority among all other roles in
 2. Map Discord roles and PMPRO levels.
 3. Advanced settings.
 4. Spot the Connect to Discord on your profile page.
+5. The appearance and text of the connect / disconnect button.
