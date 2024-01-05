@@ -1,3 +1,6 @@
+= 1.2.13 =
+- Update WordPress version 6.4
+
 = 1.2.12 =
 - Update the dismissible notification asking for review
 
